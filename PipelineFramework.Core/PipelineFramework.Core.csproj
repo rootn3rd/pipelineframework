@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1FF7275-0472-416B-87FE-7236D5E05F78}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PipelineFramework.Core</RootNamespace>
+    <AssemblyName>PipelineFramework.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstractions\AsyncPipelineComponentBase.cs" />
+    <Compile Include="Abstractions\IAsyncPipeline.cs" />
+    <Compile Include="Abstractions\IAsyncPipelineComponent.cs" />
+    <Compile Include="Abstractions\IPipeline.cs" />
+    <Compile Include="Abstractions\IPipelineComponent.cs" />
+    <Compile Include="Abstractions\IPipelineComponentResolver.cs" />
+    <Compile Include="Abstractions\PipelineBase.cs" />
+    <Compile Include="Abstractions\PipelineComponentBase.cs" />
+    <Compile Include="AsyncPipeline.cs" />
+    <Compile Include="Builder\AsyncPipelineBuilder.cs" />
+    <Compile Include="Builder\Interfaces\IAdditionalPipelineComponentHolder.cs" />
+    <Compile Include="Builder\Interfaces\IComponentResolverHolder.cs" />
+    <Compile Include="Builder\Interfaces\IInitialPipelineComponentHolder.cs" />
+    <Compile Include="Builder\Interfaces\IPipelineBuilder.cs" />
+    <Compile Include="Builder\Interfaces\ISettingsHolder.cs" />
+    <Compile Include="Builder\NonAsyncPipelineBuilder.cs" />
+    <Compile Include="Builder\PipelineBuilderBase.cs" />
+    <Compile Include="Builder\PipelineBuilderState.cs" />
+    <Compile Include="DictionaryPipelineComponentResolver.cs" />
+    <Compile Include="Exceptions\PipelineComponentExceptionBase.cs" />
+    <Compile Include="Exceptions\PipelineComponentNotFoundException.cs" />
+    <Compile Include="Exceptions\PipelineComponentSettingNotFoundException.cs" />
+    <Compile Include="Exceptions\PipelineExecutionException.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="InternalsVisibleTo.cs" />
+    <Compile Include="Pipeline.cs" />
+    <Compile Include="PipelineBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Class Diagrams\Complete.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
